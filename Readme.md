@@ -7,6 +7,7 @@ The parameters can be changed form "Constants.php" file.``
 ``No need to install any dependencies, because this application uses the standerd PHP methords.``
 
 ###`How to run`
+`Create a DB "otrium" and import the otrium_db.sql`
 
 `Execute the below command in the terminal`
 

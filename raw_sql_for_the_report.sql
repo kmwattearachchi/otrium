@@ -1,3 +1,4 @@
+/* 7 days turnover per brand (Brand Name, Total turnover(excluding VAT) per day for last 7 days)*/
 SET @sql = NULL;
 SELECT GROUP_CONCAT(DISTINCT
                     CONCAT(
@@ -31,3 +32,12 @@ PREPARE stmt FROM @sql;
 EXECUTE stmt;
 DEALLOCATE PREPARE stmt;
 
+
+/* 7 days turnover per day. (Day, total turnover(excluding VAT) per day) */
+SELECT date_format(g.date,'%Y-%m-%d') as 'day',
+       round(sum(g.turnover) / 1.21, 2) as total_turnover_vat_excluded
+from brands b
+         inner join gmv g
+                    on b.id = g.brand_id
+where g.date between date('2018-04-24') and date('2018-04-30')
+group by g.date

@@ -14,6 +14,8 @@ The parameters can be changed form "Constants.php" file.``
 #####`php CsvGenerator.php`
 
 ###About the generated report
-`Once the above command executed in using the command line, a file name with "results.csv" will be generated under the project folder. `
+`Once the above command executed in using the command line, set of files will be created under the ""Reports" folder . `
+
+`Seperate folders will be generated for each day and inside each day, there are two reports.`
 
 `For a better user experience its recomended to use microsoft excel / OpenOffice Calc or Libre Office to open the file.`

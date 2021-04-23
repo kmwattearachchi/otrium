@@ -97,7 +97,7 @@ class CsvGenerator extends DBConnection
                  CONCAT(
                          'sum(case when DATE_FORMAT(g.date, ''%Y-%m-%d'') = ''',
                          dt,
-                         ''' then round((g.turnover / 1.21),2) else 0 end) AS `',
+                         ''' then round((g.turnover / ".VAT_PERCENTAGE."),2) else 0 end) AS `',
                          dt, '`'
                      )
             from
@@ -145,7 +145,7 @@ class CsvGenerator extends DBConnection
         //Generate other data required for the report
         $stmt = $this->db->query("
                             SELECT date_format(g.date,'%Y-%m-%d') as 'day',
-                       round(sum(g.turnover) / 1.21, 2) as total_turnover_vat_excluded
+                       round(sum(g.turnover) / ".VAT_PERCENTAGE.", 2) as total_turnover_vat_excluded
                 from brands b
                          inner join gmv g
                                     on b.id = g.brand_id

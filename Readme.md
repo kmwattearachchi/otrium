@@ -4,18 +4,21 @@ The parameters can be changed form "Constants.php" file.``
 
 ``To change the start and end date, please refer to the above config file.``
 
-``No need to install any dependencies, because this application uses the standerd PHP methords.``
-
 ###`How to run`
 `Create a DB "otrium" and import the otrium_db.sql`
 
-`Execute the below command in the terminal`
+`run composer install`
 
-#####`php CsvGenerator.php`
+`Execute the below command in the terminal`
+#####`php index.php`
 
 ###About the generated report
-`Once the above command executed in using the command line, set of files will be created under the ""Reports" folder . `
+`Once the above command executed in using the command line, two files will be created under the ""Reports" folder . `
 
 `Seperate folders will be generated for each day and inside each day, there are two reports.`
 
 `For a better user experience its recomended to use microsoft excel / OpenOffice Calc or Libre Office to open the file.`
+
+###`How to run test suit`
+
+`./vendor/bin/phpunit tests`
